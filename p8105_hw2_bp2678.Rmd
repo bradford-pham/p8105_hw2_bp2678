@@ -11,5 +11,10 @@ library(tidyverse)
 
 #Question 1 
 
+```{r}
+pols_months_df =
+  read_csv("data/pols-months.csv")
+pols_months__df = janitor::clean_names(pols_months_df)
+```
 
 
