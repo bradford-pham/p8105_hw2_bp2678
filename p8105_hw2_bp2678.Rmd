@@ -41,7 +41,7 @@ Professor_trash_df =
 Gwynnda Trash Wheel
 
 ```{r}
-Professor_trash_df = 
+Gwynndar_trash_df = 
   readxl::read_excel("Data/202309 Trash Wheel Collection Data.xlsx", 
   sheet = 4, range = "A2:L158") |>
   janitor::clean_names() |>
