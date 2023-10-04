@@ -11,14 +11,44 @@ library(tidyverse)
 
 
 #Question 2
+
+Mr Trash wheel
+
 ```{r}
 mr_trash_df = 
   readxl::read_excel("Data/202309 Trash Wheel Collection Data.xlsx", 
   sheet = 1, range = "A2:N586") |>
   janitor::clean_names() |>
-  mutate(homes_power = weight_tons*500/1000)
-  
+  mutate(homes_power = (weight_tons*500/1000),
+         month = (month),
+         trash_df = "mr_trash") |>
+  relocate(trash_df)
 ```
 
+Professor Trash Wheel
+
+```{r}
+Professor_trash_df = 
+  readxl::read_excel("Data/202309 Trash Wheel Collection Data.xlsx", 
+  sheet = 2, range = "A2:M108") |>
+  janitor::clean_names() |>
+  mutate(homes_power = (weight_tons*500/1000),
+         month = (month),
+         trash_df = "professor_trash") |>
+  relocate(trash_df)
+```
+
+Gwynnda Trash Wheel
+
+```{r}
+Professor_trash_df = 
+  readxl::read_excel("Data/202309 Trash Wheel Collection Data.xlsx", 
+  sheet = 4, range = "A2:L158") |>
+  janitor::clean_names() |>
+  mutate(homes_power = (weight_tons*500/1000),
+         month = (month),
+         trash_df = "Gwynndar_trash") |>
+  relocate(trash_df)
+```
 
 
