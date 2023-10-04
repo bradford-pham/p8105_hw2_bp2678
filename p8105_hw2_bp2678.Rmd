@@ -9,12 +9,16 @@ library(tidyverse)
 
 ```
 
-#Question 1 
 
+#Question 2
 ```{r}
-pols_month_df =
-  read_csv("Data/pols-month.csv")
-pols_month_df = janitor::clean_names(pols_month_df)
+mr_trash_df = 
+  readxl::read_excel("Data/202309 Trash Wheel Collection Data.xlsx", 
+  sheet = 1, range = "A2:N586") |>
+  janitor::clean_names() |>
+  mutate(homes_power = weight_tons*500/1000)
+  
 ```
+
 
 
