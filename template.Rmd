@@ -1,0 +1,6 @@
+---
+title: "p8105_hw2_bp2678"
+author: "Brady Pham"
+date: 2023-10-04
+output: github_document
+---
