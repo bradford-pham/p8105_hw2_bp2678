@@ -116,6 +116,10 @@ mci_single =
 
 When looking at both data sets it shows only 8 particpants that show up on one or the other but not both. The 8 participants are 14, 49,92,179,268,304,389,412.
 
+```{r}
+mci_combined =
+  inner_join (baseline_mci_df, amyloid_mci_df, by = "id")
+```
 
-
+when combining both data sets there are 2355 rows and 8 columns.It has variables like id, sex, apoe4, amyloid_amount. 
 
