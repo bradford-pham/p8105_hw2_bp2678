@@ -62,6 +62,8 @@ In the dataset of Mr. Trash Wheel, it had three different data set for Mr. Trash
 
 #Question 3
 
+clean and maipulate baseline mci dataset 
+
 ```{r}
 baseline_mci_df = 
   read_csv("data/MCI_baseline.csv", skip = 1) |>
@@ -87,7 +89,23 @@ carriers =
 
 For this process we had to read the data and with the funciton read_csv and from there we had to clean the data and change some of the variables. Some of the imporant variables were id, sex, apoe4 and age of onsent. Orignally there were 483 particpants that were in the study, however only 479 met the requirment. The average age is `r mean(baseline_mci_df$current_age)`and the percentage of women who has the apoe4 gene is `r (nrow(carriers)/479) * 100`
 
+clean and maipulate amyloid mci dataset
 
+```{r}
+amyloid_mci_df = 
+  read_csv("data/mci_amyloid.csv", skip = 1) |>
+  janitor::clean_names() |>
+  rename("time_0" = baseline,
+         "id" = study_id) |>
+  pivot_longer(
+    time_0:time_8,
+    names_to = "time",
+    values_to = "amyloid_amount"
+  )
+
+```
+
+For this process it was similar to what we did with the baseline. We read the file from our folder and cleaned it up. We used pivot function to be able to rename the varibles.  
 
 
 
