@@ -107,5 +107,15 @@ amyloid_mci_df =
 
 For this process it was similar to what we did with the baseline. We read the file from our folder and cleaned it up. We used pivot function to be able to rename the varibles.  
 
+To see if there are any single particpants that only show up once
+```{r}
+mci_single = 
+  anti_join(baseline_mci_df, amyloid_mci_df, by = "id")
+  
+```
+
+When looking at both data sets it shows only 8 particpants that show up on one or the other but not both. The 8 participants are 14, 49,92,179,268,304,389,412.
+
+
 
 
