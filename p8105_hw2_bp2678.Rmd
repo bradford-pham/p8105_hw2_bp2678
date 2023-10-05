@@ -75,8 +75,13 @@ baseline_mci_df =
   apoe4 = recode(
     apoe4,
     `1` = "carrier",
-    `0` = "non-carrier"))
- 
+    `0` = "non-carrier")) |>
+ filter(age_at_onset > current_age | age_at_onset == '.')
+
+devloping =
+  filter(baseline_mci_df, age_at_onset != '.')
+carriers =
+  filter(baseline_mci_df, apoe4 == "carriers")
 ```
 
 
